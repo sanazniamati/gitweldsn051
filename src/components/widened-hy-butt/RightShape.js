@@ -1,7 +1,7 @@
 import { Arrow, Group, Line, Shape, Text } from "react-konva";
 
 function RightShape({
-  xCordinateRightShape,
+  xCoordinateRightShape,
   r,
   ySPRightShape,
   bRightShape,
@@ -14,29 +14,27 @@ function RightShape({
   return (
     <Group>
       <Shape
-        x={xCordinateRightShape}
+        x={xCoordinateRightShape}
         sceneFunc={(context, shape) => {
           context.beginPath();
-          context.moveTo(147, 595);
+          context.moveTo(147, 539);
           //start point
           context.lineTo(147, ySPRightShape);
           context.arcTo(147, yCPRightShape, 305, bRightShape, r);
-          // context.quadraticCurveTo(552, 290, 683, 269);
           context.lineTo(439, bRightShape);
           //shekastegi
           context.lineTo(439, y1RightShape);
           context.lineTo(425, y2RightShape);
           context.lineTo(454, y3RightShape);
           context.lineTo(438, y4RightShape);
-          context.lineTo(438, 420 - 17);
-          context.lineTo(328, 420 - 17);
-          // context.quadraticCurveTo(685, 426, 679, 447);
-          context.arcTo(307, 409, 301, 430, 35);
-          context.lineTo(301, 595);
-          context.lineTo(230, 595);
-          context.lineTo(227, 615);
-          context.lineTo(219, 575);
-          context.lineTo(214, 595);
+          context.lineTo(438, 347);
+          context.lineTo(328, 347);
+          context.arcTo(307, 353, 301, 374, 35);
+          context.lineTo(301, 539);
+          context.lineTo(230, 539);
+          context.lineTo(227, 559);
+          context.lineTo(219, 519);
+          context.lineTo(214, 539);
           context.closePath();
           context.fillStrokeShape(shape);
         }}
@@ -44,20 +42,20 @@ function RightShape({
         strokeWidth={3}
       />
       <Line
-        x={xCordinateRightShape}
+        x={xCoordinateRightShape}
         stroke={"green"}
-        strokeWidth={2}
-        points={[817 - 378, bRightShape, 876 - 378, bRightShape]}
+        strokeWidth={3}
+        points={[439, bRightShape, 498, bRightShape]}
       />
       <Text
-        x={xCordinateRightShape + 848 - 378}
-        y={330 - 17}
+        x={xCoordinateRightShape + 510}
+        y={y2RightShape}
         text={"t1"}
         fontSize={30}
       />
       <Arrow
-        x={xCordinateRightShape}
-        points={[876 - 378, bRightShape + 3, 876 - 378, 417 - 17]}
+        x={xCoordinateRightShape}
+        points={[498, bRightShape + 3, 498, 347 - 3]}
         pointerLength={5}
         pointerWidth={5}
         pointerAtBeginning={true}
@@ -66,27 +64,22 @@ function RightShape({
         strokeWidth={3}
       />
       <Line
-        x={xCordinateRightShape}
+        x={xCoordinateRightShape}
         stroke={"green"}
-        strokeWidth={2}
-        points={[817 - 378, 419 - 17, 876 - 378, 419 - 17]}
+        strokeWidth={3}
+        points={[817 - 378, 347, 876 - 378, 347]}
       />
       {/*    R */}
       <Text
-        x={xCordinateRightShape + 555 - 378}
-        y={yCPRightShape - 137 - 17}
+        x={xCoordinateRightShape + 555 - 378}
+        y={yCPRightShape - 137}
         text={"R"}
-        fontSize={40}
+        fontSize={30}
       />
 
       <Arrow
-        x={xCordinateRightShape}
-        points={[
-          566 - 378,
-          yCPRightShape - 107 - 17,
-          566 - 378,
-          ySPRightShape - 185 - 17,
-        ]}
+        x={xCoordinateRightShape}
+        points={[188, yCPRightShape - 107, 188, ySPRightShape - 185]}
         pointerLength={5}
         pointerWidth={5}
         pointerAtEnding={true}
