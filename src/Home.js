@@ -5,10 +5,10 @@ function Home() {
   return (
     <>
       <Link to="/HY_Butt">
-        <img width="570px" src={HY} alt="profile" />
+        <img width="570px" src={HY} alt={"widened-hy-butt"} />
       </Link>
       <Link to="/SteepFlankedSingleV">
-        <img width="570px" src={steep_flanked} alt="profile" />
+        <img width="570px" src={steep_flanked} alt={"SteepFlankedSingleV"} />
       </Link>
     </>
   );

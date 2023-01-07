@@ -66,7 +66,7 @@ function RightShape({
         x={xCoordinateRightShape}
         sceneFunc={(context, shape) => {
           context.beginPath();
-          context.moveTo(348, yBetaBigLine);
+          context.moveTo(350, yBetaBigLine);
           context.quadraticCurveTo(
             initialXQuadratic,
             yBetaSmallLine - 40,

@@ -17,18 +17,18 @@ function BottomShape({
       <Line
         x={xCoordinateRightShape}
         stroke={"green"}
-        strokeWidth={2}
-        points={[598 - 250, yBetaBigLine, 598 - 250, 554 - 229]}
+        strokeWidth={3}
+        points={[350, yBetaBigLine, 350, 325]}
       />
       <Line
         x={xCoordinateLeftShape}
         stroke={"green"}
-        strokeWidth={2}
-        points={[527 - 250, 423 - 229, 527 - 250, 554 - 229]}
+        strokeWidth={3}
+        points={[277, 194, 277, 325]}
       />
       <Arrow
         x={xCoordinateLeftShape}
-        points={[530 - 250, 550 - 229, bDistance - 250, 550 - 229]}
+        points={[280, 321, bDistance, 321]}
         pointerLength={5}
         pointerWidth={5}
         pointerAtBeginning={true}
@@ -38,8 +38,8 @@ function BottomShape({
       <Text x={555 - 250} y={555 - 229} text={"b"} fontSize={40} />
 
       <Rect
-        x={xCoordinateLeftShape + 404 - 250}
-        y={426 - 229}
+        x={xCoordinateLeftShape + 154}
+        y={197}
         width={width}
         height={54}
         stroke={"blue"}

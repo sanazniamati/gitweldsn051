@@ -2,6 +2,7 @@ import { Arrow, Group, Line, Shape, Text } from "react-konva";
 
 function LeftShape({
   xCoordinateLeftShape,
+  initialXLeftShape,
   bLeftShape,
   y4LeftShape,
   y3LeftShape,
@@ -43,7 +44,7 @@ function LeftShape({
         sceneFunc={(context, shape) => {
           context.beginPath();
           context.moveTo(0, bLeftShape);
-          context.lineTo(162, bLeftShape);
+          context.lineTo(initialXLeftShape, bLeftShape);
           context.lineTo(277, 196);
           context.lineTo(0, 196);
           context.lineTo(0, y4LeftShape);
