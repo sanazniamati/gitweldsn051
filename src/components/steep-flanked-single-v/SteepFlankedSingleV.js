@@ -3,7 +3,6 @@ import { useState } from "react";
 import LeftShape from "./LeftShape";
 import RightShape from "./RightShape";
 import BottomShape from "./BottomShape";
-import { type } from "@testing-library/user-event/dist/type";
 export default function SteepFlankedSingleV() {
   let f = 196;
   const [grad, setGrad] = useState(15);
@@ -27,7 +26,7 @@ export default function SteepFlankedSingleV() {
   const [t1, setT1] = useState(f - bRightShape);
   let initialX = t1 * Math.tan((grad * Math.PI) / 180) + 350;
   let xAdditionalLine = initialX + 65 * Math.tan((grad * Math.PI) / 180);
-  let initiala = 10 * Math.cos((grad * Math.PI) / 180);
+  let initialA = 10 * Math.cos((grad * Math.PI) / 180);
   // for calc b distance
   const [xCoordinateLeftShape, setXCoordinateLeftShape] = useState(0);
   const [xCoordinateRightShape, setXCoordinateRightShape] = useState(0);
@@ -93,71 +92,63 @@ export default function SteepFlankedSingleV() {
   };
   const handelOnChangeT1 = (e) => {
     setT1(e.target.value);
+    console.log("t1: " + e.target.value);
     if (e.target.value >= f) {
-      setBRightShape(bRightShape - (e.target.value - f));
-      setY1RightShape(y1RightShape - (e.target.value - f) / 2);
-      setY2RightShape(y2RightShape - (e.target.value - f) / 2);
-      setY3RightShape(y3RightShape - (e.target.value - f) / 2);
-      setY4RightShape(y4RightShape - (e.target.value - f) / 2);
-      setYBetaBigLine(yBetaBigLine - (e.target.value - f));
-      setYBetaSmallLine(yBetaBigLine - (e.target.value - f));
+      setBRightShape(0 - (e.target.value - f));
+      setY1RightShape(88 - (e.target.value - f) / 2);
+      setY2RightShape(93 - (e.target.value - f) / 2);
+      setY3RightShape(103 - (e.target.value - f) / 2);
+      setY4RightShape(109 - (e.target.value - f) / 2);
+      setYBetaBigLine(-81 - (e.target.value - f));
+      setYBetaSmallLine(-78 - (e.target.value - f));
     } else {
-      setBRightShape(bRightShape + (f - e.target.value));
-      setY1RightShape(y1RightShape + (f - e.target.value) / 2);
-      setY2RightShape(y2RightShape + (f - e.target.value) / 2);
-      setY3RightShape(y3RightShape + (f - e.target.value) / 2);
-      setY4RightShape(y4RightShape + (f - e.target.value) / 2);
-      setYBetaBigLine(yBetaBigLine + (f - e.target.value));
-      setYBetaSmallLine(yBetaBigLine + (f - e.target.value));
+      setBRightShape(f - e.target.value);
+      setY1RightShape(88 + (f - e.target.value) / 2);
+      setY2RightShape(93 + (f - e.target.value) / 2);
+      setY3RightShape(103 + (f - e.target.value) / 2);
+      setY4RightShape(109 + (f - e.target.value) / 2);
+      setYBetaBigLine(-81 + (f - e.target.value));
+      setYBetaSmallLine(-78 + (f - e.target.value));
     }
   };
   const handelOnChangeT2 = (e) => {
     setT2(e.target.value);
+    console.log("t2: " + e.target.value);
     if (e.target.value >= f) {
-      setBLeftShape(bLeftShape - (e.target.value - f));
-      console.log("t2: " + t2);
-      console.log("bLeftShape: " + bLeftShape);
-      setY1LeftShape(y1LeftShape - (e.target.value - f) / 2);
-      console.log("y1LeftShape: " + y1LeftShape);
-      setY2LeftShape(y2LeftShape - (e.target.value - f) / 2);
-      console.log("y2LeftShape: " + y2LeftShape);
-      setY3LeftShape(y3LeftShape - (e.target.value - f) / 2);
-      console.log("y3LeftShape: " + y3LeftShape);
-      setY4LeftShape(y4LeftShape - (e.target.value - f) / 2);
-      console.log("y4LeftShape: " + y4LeftShape);
+      setBLeftShape(0 - (e.target.value - f));
+      console.log("bLeftShape: " + (0 - (e.target.value - f)));
+      setY1LeftShape(88 - (e.target.value - f) / 2);
+      console.log("y1LeftShape: " + (88 - (e.target.value - f) / 2));
+      setY2LeftShape(93 - (e.target.value - f) / 2);
+      console.log("y2LeftShape: " + (93 - (e.target.value - f) / 2));
+      setY3LeftShape(103 - (e.target.value - f) / 2);
+      console.log("y3LeftShape: " + (103 - (e.target.value - f) / 2));
+      setY4LeftShape(109 - (e.target.value - f) / 2);
+      console.log("y4LeftShape: " + (109 - (e.target.value - f) / 2));
     } else {
-      setBLeftShape(bLeftShape + (f - e.target.value));
-      setY1LeftShape(y1LeftShape + (f - e.target.value) / 2);
-      setY2LeftShape(y2LeftShape + (f - e.target.value) / 2);
-      setY3LeftShape(y3LeftShape + (f - e.target.value) / 2);
-      setY4LeftShape(y4LeftShape + (f - e.target.value) / 2);
+      setBLeftShape(f - e.target.value);
+      setY1LeftShape(88 + (f - e.target.value) / 2);
+      setY2LeftShape(93 + (f - e.target.value) / 2);
+      setY3LeftShape(103 + (f - e.target.value) / 2);
+      setY4LeftShape(109 + (f - e.target.value) / 2);
     }
   };
   const handelOnChangeBeta = (e) => {
     setGrad(e.target.value);
   };
-
   const initialBDistance = 346;
   const handelOnChangeBDistance = (e) => {
     setBDistance(() => Number(e.target.value));
-    if (e.target.value > initialBDistance) {
-      console.log("bDistance: " + bDistance);
-      setWidth(width + (e.target.value - initialBDistance));
-      console.log("Width:" + width);
-      setXCoordinateRightShape(
-        xCoordinateRightShape + (e.target.value - initialBDistance) / 2
-      );
-      setXCoordinateLeftShape(
-        xCoordinateLeftShape - (e.target.value - initialBDistance) / 2
-      );
+    console.log("typeof bDistance: " + typeof Number(bDistance) + bDistance);
+    if (e.target.value >= initialBDistance) {
+      setWidth(316 + (e.target.value - initialBDistance));
+      console.log("Width:" + (316 + (e.target.value - initialBDistance)));
+      setXCoordinateRightShape((e.target.value - initialBDistance) / 2);
+      setXCoordinateLeftShape(0 - (e.target.value - initialBDistance) / 2);
     } else {
-      setWidth(width - (initialBDistance - e.target.value));
-      setXCoordinateRightShape(
-        xCoordinateRightShape - (initialBDistance - e.target.value) / 2
-      );
-      setXCoordinateLeftShape(
-        xCoordinateLeftShape + (initialBDistance - e.target.value) / 2
-      );
+      setWidth(316 - (initialBDistance - e.target.value));
+      setXCoordinateRightShape(0 - (initialBDistance - e.target.value) / 2);
+      setXCoordinateLeftShape((initialBDistance - e.target.value) / 2);
     }
   };
 
@@ -215,7 +206,7 @@ export default function SteepFlankedSingleV() {
             bDistance={bDistance}
             width={width}
           />
-          {/*additinal line*/}
+          {/*additional line*/}
           <Line
             x={xCoordinateRightShape}
             stroke={"green"}
@@ -224,7 +215,7 @@ export default function SteepFlankedSingleV() {
               initialX,
               bRightShape,
               xAdditionalLine,
-              yBetaSmallLine + initiala,
+              yBetaSmallLine + initialA,
             ]}
           />
         </Layer>
