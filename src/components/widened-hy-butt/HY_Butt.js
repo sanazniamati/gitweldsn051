@@ -16,7 +16,6 @@ export default function HY_Butt() {
   const [ySPRightShape, setYSPRightShape] = useState(410);
   const [yCPRightShape, setYCPRightShape] = useState(207);
   //left shape
-
   const [aLeftShape, setALeftShape] = useState(114);
   const [t2, setT2] = useState(aLeftShape);
   const [x1LeftShape, setX1LeftShape] = useState(52);
@@ -48,8 +47,9 @@ export default function HY_Butt() {
     setYSPRightShape(ySPRightShape - 5);
   };
   const handelIncT1 = () => {
-    setBRightShape();
     setBRightShape(bRightShape - 10);
+    setT1(347 - bRightShape);
+
     setY1RightShape(y1RightShape - 5);
     setY2RightShape(y2RightShape - 5);
     setY3RightShape(y3RightShape - 5);
@@ -59,6 +59,8 @@ export default function HY_Butt() {
   };
   const handelDecT1 = () => {
     setBRightShape(bRightShape + 10);
+    setT1(347 - bRightShape);
+
     setY1RightShape(y1RightShape + 5);
     setY2RightShape(y2RightShape + 5);
     setY3RightShape(y3RightShape + 5);
@@ -129,6 +131,7 @@ export default function HY_Butt() {
   const handelOnChangeR = (e) => {
     setR(e.target.value);
   };
+
   return (
     <>
       <button onClick={handelDecT2}> t2 -</button>
